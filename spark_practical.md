@@ -102,12 +102,16 @@ It should return `2694` rows.
 At this stage, these are just long rows of text and not split into the individual fields. If you recall, the fields are:
 
 Header | Definition
----|---------
+-------|-----------
 `YEAR` | The year the episode aired
-`GoogleKnowlege_Occupation` | Their occupation or office, according to Google's Knowledge Graph or, if they're not in there, how Stewart introduced them on the program.
+`GoogleKnowlege_Occupation` | Their occupation or office, according to Google's Knowledge Graph or, 
+if they're not in there, how Stewart introduced them on 
+the program.
 `Show` | Air date of episode. Not unique, as some shows had more than one guest
-`Group` | A larger group designation for the occupation. For instance, us senators, us presidents, and former presidents are all under "politicians"
-`Raw_Guest_List` | The person or list of people who appeared on the show, according to Wikipedia. The GoogleKnowlege_Occupation only refers to one of them in a given row. 
+`Group` | A larger group designation for the occupation. For instance, us senators, us presidents, 
+and former presidents are all under "politicians"
+`Raw_Guest_List` | The person or list of people who appeared on the show, according to Wikipedia. 
+The GoogleKnowlege_Occupation only refers to one of them in a given row. 
 
 So take a look at the first 5 rows of the RDD we just created:
 
