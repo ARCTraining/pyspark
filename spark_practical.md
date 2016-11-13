@@ -20,15 +20,15 @@ If the IP address of your instance is (for example: `10.123.231.19`, you'll find
 
 You should see something like this:
 
-![](fig/notebook_splash_screen.png)
+![Zeppelin Notebook Splash Screen](fig/notebook_splash_screen.png)
 
 From the Notebook drop-down select *Create new note+* and give the new notebook a suitable name:
 
-![](fig/notebook_name.png)
+![Naming the new notebook](fig/notebook_name.png)
 
 You should get a new blank notebook:
 
-![](fig/empty_notebook.png)
+![An empty blank notebook](fig/empty_notebook.png)
 
 
 ##First steps with analysis
@@ -62,14 +62,14 @@ Saving to: “daily_show_guests.csv.1”
 FINISHED   
 ~~~
 
-Spark stores it's data in **Resilient Distributed datasets** (or RDDs for short), but first we need to get the data from the disk into HDFS, the **Hadoop Distributed File System** in our Virtual machine/
+Spark stores it's data in **Resilient Distributed datasets** (or RDDs for short), but first we need to get the data from the disk into HDFS, the **Hadoop Distributed File System** in our Virtual machine.
  
 ~~~
 %sh
 hadoop fs -put ~/daily_show_guests.csv /tmp
 ~~~
 
-This will `put` the file we have just downloaded into the directort `tmp` within the HDFS.
+This will `put` the file we have just downloaded into the directory `tmp` within the HDFS.
 
 If you make a mistake during this step or you put the wrong file in the HDFS, you can delete it by:
 
@@ -78,7 +78,7 @@ If you make a mistake during this step or you put the wrong file in the HDFS, yo
 hdfs dfs -rm -r hdfs://sandbox.hortonworks.com/tmp/daily_show_guests.csv
 ~~~
 
-Next, to create the RDD, we'll be using the *PySpark* Python interpreter, so we'll need to tell the Zeppelin notebook this by prefixing the command with `%pyspark`:
+Next, to create the RDD we'll be using the *PySpark* Python interpreter, so we'll need to tell the Zeppelin notebook this by prefixing the command with `%pyspark`:
 
 ~~~
 %pyspark
@@ -109,7 +109,7 @@ Header | Definition
 `Group` | A larger group designation for the occupation. For instance, us senators, us presidents, and former presidents are all under "politicians"
 `Raw_Guest_List` | The person or list of people who appeared on the show, according to Wikipedia. The GoogleKnowlege_Occupation only refers to one of them in a given row. 
 
-Take a look at the first 5 rows:
+So take a look at the first 5 rows of the RDD we just created:
 
 ~~~
 %pyspark
@@ -135,7 +135,11 @@ print (daily_show.take(5))
 will show:
 
 ~~~
-[[u'YEAR', u'GoogleKnowlege_Occupation', u'Show', u'Group', u'Raw_Guest_List'], [u'1999', u'actor', u'1/11/99', u'Acting', u'Michael J. Fox'], [u'1999', u'Comedian', u'1/12/99', u'Comedy', u'Sandra Bernhard'], [u'1999', u'television actress', u'1/13/99', u'Acting', u'Tracey Ullman'], [u'1999', u'film actress', u'1/14/99', u'Acting', u'Gillian Anderson']]
+[[u'YEAR', u'GoogleKnowlege_Occupation', u'Show', u'Group', u'Raw_Guest_List'], 
+[u'1999', u'actor', u'1/11/99', u'Acting', u'Michael J. Fox'], 
+[u'1999', u'Comedian', u'1/12/99', u'Comedy', u'Sandra Bernhard'], 
+[u'1999', u'television actress', u'1/13/99', u'Acting', u'Tracey Ullman'], 
+[u'1999', u'film actress', u'1/14/99', u'Acting', u'Gillian Anderson']]
 
 ~~~
 
@@ -172,7 +176,10 @@ print (guest_tally.take(guest_tally.count()))
 We see the resulting list of key-value pairs:
 
 ~~~
-[(u'1999', 166), (u'2002', 159), (u'2000', 169), (u'2006', 161), (u'2004', 164), (u'2015', 100), (u'2008', 164), (u'2011', 163), (u'2013', 166), (u'2005', 162), (u'2003', 166), (u'2001', 157), (u'2007', 141), (u'YEAR', 1), (u'2014', 163), (u'2009', 163), (u'2010', 165), (u'2012', 164)]
+[(u'1999', 166), (u'2002', 159), (u'2000', 169), (u'2006', 161), (u'2004', 164), 
+(u'2015', 100), (u'2008', 164), (u'2011', 163), (u'2013', 166), (u'2005', 162), 
+(u'2003', 166), (u'2001', 157), (u'2007', 141), (u'YEAR', 1), (u'2014', 163), 
+(u'2009', 163), (u'2010', 165), (u'2012', 164)]
 FINISHED   
 ~~~
 
