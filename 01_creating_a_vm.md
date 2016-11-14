@@ -58,11 +58,7 @@ Choose the option **DS2_V2 standard** and click **[Select]**
 Finally, on **tab 5: Buy** click **[Purchase]**. All the options are covered by your credits.
 
 
-\ ![Portal Image 4](fig/portal_4.png) 
-
 5.The final screen will start to create your VM. The process usually takes around 5 minutes.
-
-\ ![Portal Image 5](fig/portal_5.png) 
 
 After the process has completed, you will be presented with a confirmation screen like this one:
 
