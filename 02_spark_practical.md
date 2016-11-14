@@ -1,4 +1,4 @@
-#Using Pyspark to analyse data using Apache Spark
+#Practical 2: Using Pyspark to analyse data using Apache Spark
 
 In these exercises, we'll be using some example data from the **Five Thirty Eight** project. 538 publish articles based on the analysis of polling and other data and make many of the datasets they use available for further analysis.
 
@@ -10,9 +10,9 @@ In these exercises, we will be using the *Daily Show Guests* dataset, but you ca
 
 First, download the `daily_show_guests.csv` file to your PC. Take a look at at and get a feel for the nature of the data it contains.
 
-This should open up in your Spreadsheet application; it's a `csv` comma-separated variable file. This isn't a particularly large dataset, but it's large enough to demonstrate some important principles.
+This should open up in your Spreadsheet application as it's a `csv` comma-separated variable file. This isn't a particularly large dataset, but it's large enough to demonstrate some important principles.
 
-In your HortonWorks instance, launch **Apache Zeppelin**. This provides an online interactive Data Science notebook which uses the Python programming language in the background.
+In your HortonWorks VM, launch **Apache Zeppelin**. This provides an online interactive Data Science notebook which uses the Python programming language in the background.
 
 If the IP address of your instance is (for example: `10.123.231.19`, you'll find your notebook at web address:
 
@@ -20,7 +20,7 @@ If the IP address of your instance is (for example: `10.123.231.19`, you'll find
 
 You should see something like this:
 
-![Zeppelin Notebook Splash Screen](fig/notebook_splash_screen.png)
+\ ![Zeppelin Notebook Splash Screen](fig/notebook_splash_screen.png)
 
 From the Notebook drop-down select *Create new note+* and give the new notebook a suitable name:
 
@@ -28,14 +28,14 @@ From the Notebook drop-down select *Create new note+* and give the new notebook 
 
 You should get a new blank notebook:
 
-![An empty blank notebook](fig/empty_notebook.png)
+\ ![An empty blank notebook](fig/empty_notebook.png)
 
 
 ##First steps with analysis
 
 We need to get data using the 'Shell' interpreter. This will download the dataset into the Virtual Machine you created earlier:
 
-Enter this code into the first blank section in the notebook.
+Enter this code into the first blank section (we call these *paragraphs*) in the notebook.
 
 ~~~
 %sh
@@ -44,7 +44,7 @@ wget https://raw.githubusercontent.com/fivethirtyeight/data/master/daily-show-gu
 
 Like this:
 
-![](fig/notebook_with_para.png)
+\ ![Notebook with first paragraph](fig/notebook_with_para.png)
 
 Hit [SHIFT] and [ENTER] and you'll see:
 
@@ -227,6 +227,9 @@ Count how many times people in the occupation group *Comedy* have appeared on th
 How many times has Will Ferrell appeared on the show?
 
 As you've seen, **538** host lots of interesting data sets. Choose one or two others and see if you can import and process the dataset to produce some insight. 
+
+##Further reading
+
 
 
 
